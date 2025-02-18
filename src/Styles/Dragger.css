@@ -1,0 +1,99 @@
+.notebook-preview {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  .draggable-element {
+    position: absolute;
+    user-select: none;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  
+  .draggable-element:hover {
+    border-color: #2196F3;
+  }
+  
+  .draggable-element.dragging {
+    opacity: 0.8;
+    border-color: #2196F3;
+  }
+  
+  .resize-handle {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    width: 12px;
+    height: 12px;
+    background-color: #2196F3;
+    border-radius: 50%;
+    cursor: se-resize;
+  }
+  
+  .cover-text {
+    position: absolute;
+    padding: 10px;
+    cursor: move;
+    user-select: none;
+  }
+  
+  /* Position classes for text */
+  .top-left { top: 20px; left: 20px; }
+  .top-center { top: 20px; left: 50%; transform: translateX(-50%); }
+  .top-right { top: 20px; right: 20px; }
+  .center-left { top: 50%; left: 20px; transform: translateY(-50%); }
+  .center-center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .center-right { top: 50%; right: 20px; transform: translateY(-50%); }
+  .bottom-left { bottom: 20px; left: 20px; }
+  .bottom-center { bottom: 20px; left: 50%; transform: translateX(-50%); }
+  .bottom-right { bottom: 20px; right: 20px; }
+  
+  /* Shape styles */
+  .draggable-element.circle img,
+  .draggable-element.circle {
+    border-radius: 50%;
+  }
+  
+  .draggable-element.square img,
+  .draggable-element.square {
+    aspect-ratio: 1;
+  }
+  
+  .draggable-element.oval img,
+  .draggable-element.oval {
+    border-radius: 50%;
+    aspect-ratio: 1.5;
+  }
+  
+  /* Preview panel improvements */
+  .preview-panel {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .notebook-preview {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+  }
+  
+  /* Image upload preview */
+  .image-preview {
+    max-width: 150px;
+    max-height: 150px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }

@@ -1,0 +1,676 @@
+/* General Layout */
+.min-h-screen {
+    min-height: 100vh;
+  }
+  /* .header {
+    /* ... (your header styles) ... */
+  /* Ensure header is on top */
+
+  /* Navbar */
+ 
+  
+  .get-started-button {
+    background: linear-gradient(to right, #10b981, #2563eb);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .get-started-button:hover {
+    opacity: 0.9;
+  }
+  
+  .menu-button {
+    display: none;
+  }
+  
+  /* Hero Section
+  .hero-section {
+    position: relative;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+  }
+  
+  .gradient-background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right, #e0fdf4, #e0f7ff);
+    transform: skewY(-25deg);
+    z-index: -1;
+  }
+  
+  .hero-content {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left:50px;
+  }
+  
+  .tagline {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+  }
+  
+  .icon-cloud {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #2563eb;
+    margin-right: 0.5rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.25;
+  }
+  
+  .highlighted-text {
+    background: linear-gradient(to right, #10b981, #2563eb);
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .hero-description {
+    color: #4b5563;
+    font-size: 1.25rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .cta-start-writing,
+  .cta-watch-demo {
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-start-writing {
+    background-color: #1f2937;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cta-start-writing .icon-arrow {
+    margin-left: 0.5rem;
+  }
+  
+  .cta-start-writing:hover {
+    background-color: #374151;
+  }
+  
+  .cta-watch-demo {
+    background-color: transparent;
+    border: 2px solid #e5e7eb;
+  }
+  
+  .cta-watch-demo:hover {
+    border-color: #2563eb;
+  } */
+  
+  /* Features Section */
+  .features-section {
+    padding: 5rem 1rem;
+    background-color: white;
+  }
+  
+  .features-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .features-header {
+    margin-bottom: 4rem;
+  }
+  
+  .features-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .features-description {
+    color: #4b5563;
+    max-width: 50rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .feature-card {
+    background-color: #f9fafb;
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    background: linear-gradient(to bottom right, #e0fdf4, #e0f7ff);
+  }
+  
+  .feature-icon {
+    color: #10b981;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  
+  }
+  
+  .feature-description {
+    color: #4b5563;
+  }
+  
+ 
+  /*div main page 1
+  /* FullScreenDiv.css */
+  .main-container {
+    position: relative; /* For z-index and positioning of children */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Prevents video from overflowing */
+    display: flex;
+    flex-direction: column; /* Header on top, main content below */
+  }
+  
+  .main-content { /* Added to style the main section */
+      flex-grow: 1; /* Allows the main content to take up available space */
+      overflow-y: auto;
+      margin-top: 20px; /* Add a scrollbar to the main content if necessary */
+  }
+  .full-screen-container {
+    width: 100vw;
+    height: 100vh; /* Or adjust as needed */
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/22/23/09/fountain-pen-1851096_640.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .inner-container-f1 {
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    
+  }
+  
+ 
+  .main-container-layout {
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    gap: 1rem; /* Consistent gap */
+    /* Consistent padding */
+    position: relative;
+    margin-top: 300px; 
+    background-image: url("https://t3.ftcdn.net/jpg/07/82/01/84/360_F_782018423_8Y5BkW9uG1zj9vrZRsuai7J1BPcigWOo.jpg");
+   /* For proper z-index stacking */
+
+  }
+  .container {
+    width: 50%; /* Adjust as needed */
+    height: 500px; /* Adjust as needed */
+    background-color: lightblue;
+  
+    position: relative; /* Important for positioning the inner container */
+    display: flex; /* Optional: For centering the inner container */
+    justify-content: center; /* Optional: For centering horizontally */
+    align-items: center; /* Optional: For centering vertically */
+    margin-top: 14px; /* Optional: For adding top margin */
+    margin-top: 14px;
+  
+  }
+  .container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Or contain, fill, scale-down as needed */
+  }
+  
+  .inner-container { /* Give the inner container a class */
+    width: 50%; /* Half the size of the parent container */
+    height: 50%; /* Half the size of the parent container */
+    background-color: lightcoral;
+    position: absolute; /* To allow positioning relative to the parent */
+    top: 25%; /* Center vertically */
+    left: 25%;
+    margin-top:  200px;
+    margin-left: 400px; /* Center horizontally */
+    padding: 1rem;/* You can remove the margin-top and margin-left if you are using flexbox centering on the parent*/
+    background-image: url("../../public/images/nature2.jpeg");
+  }
+  .third-container{
+     /* Give the inner container a class */
+        width: 55%; /* Half the size of the parent container */
+        height: 65%; /* Half the size of the parent container */
+        background-color: blanchedalmond;
+        position: absolute; /* To allow positioning relative to the parent */
+        top: 56%;
+        right: 15%;
+        margin-top: 130px;
+        margin-right: -400px;
+        background-image: url("https://renote.ai/static/images/Templates.jpg");
+        background-size: cover;  /* Ensures it fills the container */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat;
+      
+  }
+  
+  /* Hide all but the current slide */
+  .slide-content:not(:nth-child(1)) { /* All but the first child */
+    opacity: 0; /* Initially hidden */
+  }
+  
+  .slide-content:nth-child(1) { /* The first child (current slide) */
+      opacity: 1;
+  }
+  
+  /* Media Queries for responsiveness (optional) */
+  @media (max-width: 768px) {
+    .inner-container {
+      width: 95%;
+      height: 95%;
+    }
+  }
+  
+  /*2nd phase*/
+/* styles.css */
+/* TwoContainerLayout.css */
+.two-container-layout {
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    gap: 1rem; /* Consistent gap */
+    /* Consistent padding */
+    position: relative; /* For proper z-index stacking */
+  }
+  
+  .left-container{
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 0.5rem; /* Rounded corners */
+     /* Padding inside containers */
+    border-radius: 2px;
+    margin-top: 115px;
+    height: 400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex; /* Ensures image aligns properly */
+    justify-content: center; /* Centers image horizontally */
+    align-items: center;
+  }
+  .right-container {
+    background-color: white; /* Light gray background */
+    border-radius: 0.5rem; /* Rounded corners */
+    padding: 1rem; /* Padding inside containers */
+    height: 600px;
+    /* margin-top:125px; */
+    background-image: url("https://images.unsplash.com/photo-1518226203301-8e7f833c6a94?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fG5vdGVib29rfGVufDB8fDB8fHww");
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-size: cover;  /* Ensures it fills the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Subtle shadow */
+  }
+  .right-container-top{
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 38px 30px 10px 80px ;
+    height: 80%;
+    width: 80%;
+    margin-top: 60px;
+    margin-left: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position:center;
+    /* background-image: url("https://images.unsplash.com/photo-1612367980327-7454a7276aa7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhbmslMjBub3RlYm9va3xlbnwwfHwwfHx8MA%3D%3D");
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  .left-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+  }  
+  
+  
+  @media (min-width: 768px) { /* Adjust breakpoint as needed */
+    .two-container-layout {
+      flex-direction: row; /* Switch to row layout on medium screens */
+    }
+  
+    .left-container {
+      width: 45%; /* 60% width on larger screens */
+      z-index: 1; /* Ensure left container is on top */
+    }
+  
+    .right-container {
+      width: 65%; /* 80% width on larger screens */
+      margin-left: -8%; /* Adjust margin to overlap left container */
+    }
+  }
+  
+  .image-container-f2{
+    width: 100%;
+    height: 100%;
+    border-radius:10px;
+    margin-left: 50px;
+    background-color: #4b5563;
+    background-image: url("../../public/images/nature.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+/* 
+  .gradient-below-container{
+    width: 100%;
+    height:100px;
+    border-radius: 10px;
+    background-color: black;
+    box-sizing: border-box;
+    /* transform: skewX(-10deg); */
+    /* clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+    
+    background-image: url("../../public/images/hand.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }  */
+
+  .gradient-below-container {
+    width: 100%;
+    height: 80px; /* Default height for mobile */
+    border-radius: 8px; /* Slightly smaller radius for mobile */
+    background-color: black;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    
+    /* Base clip path for mobile */
+    clip-path: polygon(0 0, 85% 0, 95% 100%, 10% 100%);
+    
+    background-image: url("../../public/images/hand.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /* Add transition for smooth scaling */
+    transition: height 0.3s ease, clip-path 0.3s ease;
+  }
+  
+  /* Small phones (320px to 374px) */
+  @media screen and (min-width: 320px) and (max-width: 374px) {
+    .gradient-below-container {
+      height: 70px;
+      clip-path: polygon(0 0, 80% 0, 90% 100%, 10% 100%);
+    }
+  }
+  
+  /* Medium phones (375px to 424px) */
+  @media screen and (min-width: 375px) and (max-width: 424px) {
+    .gradient-below-container {
+      height: 80px;
+      clip-path: polygon(0 0, 85% 0, 95% 100%, 10% 100%);
+    }
+  }
+  
+  /* Large phones (425px to 767px) */
+  @media screen and (min-width: 425px) and (max-width: 767px) {
+    .gradient-below-container {
+      height: 90px;
+      clip-path: polygon(0 0, 88% 0, 98% 100%, 10% 100%);
+    }
+  }
+  
+  /* Tablets (768px to 1023px) */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .gradient-below-container {
+      height: 100px;
+      clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+    }
+  }
+  
+  /* Small laptops (1024px to 1439px) */
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .gradient-below-container {
+      height: 110px;
+      clip-path: polygon(0 0, 92% 0, 100% 100%, 8% 100%);
+    }
+  }
+  
+  /* Large laptops and desktops (1440px and above) */
+  @media screen and (min-width: 1440px) {
+    .gradient-below-container {
+      height: 120px;
+      clip-path: polygon(0 0, 92% 0, 100% 100%, 8% 100%);
+    }
+  }
+  
+  /* Landscape mode for mobile devices */
+  @media screen and (max-height: 500px) and (orientation: landscape) {
+    .gradient-below-container {
+      height: 60px; /* Smaller height for landscape */
+      clip-path: polygon(0 0, 92% 0, 98% 100%, 8% 100%);
+    }
+  }
+  
+  /* For high-resolution displays */
+  @media screen and (min-resolution: 192dpi) {
+    .gradient-below-container {
+      background-size: contain; /* Ensures image quality on retina displays */
+    }
+  }
+  
+  /* For ultrawide screens */
+  @media screen and (min-width: 1920px) {
+    .gradient-below-container {
+      height: 140px;
+      max-width: 1800px; /* Prevent too much stretching on ultrawide */
+      margin: 0 auto;
+    }
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevents video overflow */
+    margin: 0; /* Remove default margins */
+    padding: 0;
+  }
+  
+  .responsive-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Key for responsiveness */
+  }
+  .fixed-header {
+    position: relative;
+    /* width: 100%; */
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    top: 4px; /* Or your desired top position */
+    z-index: 50; /* Important: Ensure it's above the video */
+    /* Add any other header styles */
+    /* background-color: rgba(0, 0, 0, 0.5); Example: Semi-transparent background */
+    color: white;
+    padding: 10px;
+  }
+  .two-container-layout-2 {
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    gap: 1rem; /* Consistent gap */
+    position: relative;
+    margin-top: 150px; /* For proper z-index stacking */
+}
+.small-container{
+  width: 45%;
+  height:70%;
+  border-radius: 20px;
+  color:black;
+  font-size: 20px;
+  font-style: oblique;
+
+}
+.left-container-2 {
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 0.5rem; /* Rounded corners */
+    padding: 1rem; /* Padding inside containers */
+    height: 400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Hide overflowing image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-container-2 {
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 0.5rem; /* Rounded corners */
+    padding: 1rem; /* Padding inside containers */
+    height: 300px;
+    margin-top: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: url("https://images.unsplash.com/photo-1505744386214-51dba16a26fc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJsYW5rJTIwbm90ZWJvb2t8ZW58MHx8MHx8fDA%3D");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.right-container-top-2 { /* Added this for consistency, though not used in your original example */
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    padding: 7rem;
+    height: 80%;
+    width: 30%;
+    margin-top: -355px;
+    margin-left: 740px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: center;
+    background-image: url("https://renote.ai/static/images/Book.jpg");
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-size: cover;  /* Ensures it fills the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+}
+.right-container-top-2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures image fills the div */
+  border-radius: 3px;
+}
+
+.left-container-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .two-container-layout-2 {
+        flex-direction: row;
+    }
+
+    .left-container-2 {
+        width: 45%;
+        z-index: 1;
+    }
+
+    .right-container-2 {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+  
+.books-blog-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  /* background-color: #1f2937; */
+  margin-top: 300px;
+  /* background-image: url("https://plus.unsplash.com/premium_photo-1683309568422-dd7ce2288a4c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmxhbmslMjBub3RlYm9va3xlbnwwfHwwfHx8MA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.books-blog-container > div {
+  width: 25%;
+  height: 80%;
+  border-radius: 3px;
+  margin: 10px;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.books-blog-container > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.books-blog-container img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+}
+
+.books-blog-container > div:hover img {
+  transform: scale(1.1);
+}
+

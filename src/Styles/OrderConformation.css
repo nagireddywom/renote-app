@@ -1,0 +1,467 @@
+.confirmation-container {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 48px 16px;
+  }
+  
+  .confirmation-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+  }
+  
+  .success-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    color: #22c55e;
+    margin: 0 auto 16px;
+  }
+  
+  .success-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 8px;
+  }
+  
+  .success-message {
+    color: #4b5563;
+  }
+  
+  .order-info {
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+    margin-bottom: 24px;
+  }
+  
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .info-label {
+    color: #4b5563;
+  }
+  
+  .info-value {
+    font-weight: 600;
+  }
+  
+  .delivery-info {
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .delivery-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .invoice-section {
+    background-color: #eff6ff;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .invoice-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  @media (min-width: 640px) {
+    .button-group {
+      flex-direction: row;
+    }
+  }
+  
+  .invoice-button {
+    flex: 1;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .download-button {
+    background-color: white;
+    border: 1px solid #2563eb;
+    color: #2563eb;
+  }
+  
+  .download-button:hover {
+    background-color: #eff6ff;
+  }
+  
+  .download-button.loading {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .download-button.success {
+    border-color: #22c55e;
+    color: #22c55e;
+  }
+  
+  .print-button {
+    background-color: white;
+    border: 1px solid #d1d5db;
+    color: #374151;
+  }
+  
+  .print-button:hover {
+    background-color: #f9fafb;
+  }
+  
+  .action-button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .primary-button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+  }
+  
+  .primary-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .secondary-button {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: none;
+  }
+  
+  .secondary-button:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .support-section {
+    margin-top: 32px;
+    text-align: center;
+    color: #4b5563;
+  }
+  
+  .support-link {
+    color: #2563eb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .support-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Invoice Styles */
+  .invoice-container {
+    background-color: white;
+    padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+  
+  .invoice-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  .company-info {
+    text-align: right;
+  }
+  
+  .company-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .company-details {
+    color: #4b5563;
+  }
+  
+  .customer-info {
+    margin-bottom: 32px;
+  }
+  
+  .customer-title {
+    color: #4b5563;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+  }
+  
+  .invoice-table th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  
+  .invoice-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .item-details {
+    font-size: 14px;
+    color: #4b5563;
+    margin-top: 4px;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .totals-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 32px;
+  }
+  
+  .totals-table {
+    width: 300px;
+  }
+  
+  .totals-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .total-label {
+    font-weight: 600;
+  }
+  
+  .grand-total {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 8px;
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  
+  .invoice-footer {
+    text-align: center;
+    color: #4b5563;
+    margin-top: 64px;
+  }
+  
+  /* Print Styles */
+  @media print {
+    .confirmation-container {
+      background-color: white;
+      padding: 0;
+    }
+  
+    .confirmation-card {
+      box-shadow: none;
+      padding: 0;
+    }
+  
+    .invoice-section,
+    .action-button,
+    .support-section {
+      display: none;
+    }
+  }
+  
+  /* Loading Animation */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-spinner {
+    animation: spin 1s linear infinite;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #2563eb;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: 16px;
+  }
+  
+  .loading-container .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f4f6;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  .error-container {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 500px;
+    margin: 40px auto;
+  }
+  
+  .error-message {
+    color: #ef4444;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .return-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+  }
+  
+  .return-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .status-badge {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .status-badge.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  
+  .status-badge.confirmed {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .status-badge.processing {
+    background-color: #dbeafe;
+    color: #1e40af;
+  }
+  
+  .shipping-details {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 6px;
+  }
+  
+  .shipping-details h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+  }
+  
+  .shipping-details p {
+    margin: 4px 0;
+    color: #4b5563;
+  }
+  
+  /* Print styles */
+  @media print {
+    .button-group,
+    .invoice-section,
+    .support-section {
+      display: none;
+    }
+  
+    .confirmation-card {
+      box-shadow: none;
+      padding: 20px;
+    }
+  
+    .shipping-details {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+  
+  /* Animation */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 640px) {
+    .confirmation-card {
+      padding: 20px;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .invoice-button,
+    .action-button {
+      width: 100%;
+    }
+  }

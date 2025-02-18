@@ -1,0 +1,261 @@
+.renote-app-layout {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+  
+  .renote-main-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+    position: relative;
+  }
+  
+  .renote-preview-section {
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 400px;
+  }
+  
+  .renote-image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .renote-app-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .renote-app-preview:hover {
+    transform: scale(1.05);
+  }
+  
+  .renote-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e2e8f0;
+    color: #64748b;
+  }
+  
+  .renote-content-section {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .renote-content-container {
+    max-width: 48rem;
+  }
+  
+  .renote-app-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+  }
+  
+  .renote-app-description {
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .renote-app-description p {
+    margin-bottom: 1rem;
+  }
+  
+  .renote-app-description p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .renote-features-section {
+    margin-top: 2rem;
+  }
+  
+  .renote-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+  }
+  
+  .renote-features-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+  
+  .renote-feature-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: featureCardFadeIn 0.5s ease-out forwards;
+  }
+  
+  .renote-feature-card:hover {
+    background-color: #ebf8ff;
+  }
+  
+  .renote-icon-wrapper {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    background-color: #e6f6ff;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .renote-feature-card:hover .renote-icon-wrapper {
+    background-color: #bee3f8;
+  }
+  
+  .renote-icon {
+    color: #3182ce;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .renote-feature-card:hover .renote-icon {
+    color: #2c5282;
+  }
+  
+  .renote-feature-content {
+    flex: 1;
+  }
+  
+  .renote-feature-title {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+  
+  .renote-feature-description {
+    color: #718096;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .renote-security-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .renote-security-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f7fafc;
+    transition: background-color 0.3s ease;
+  }
+  
+  .renote-security-wrapper:hover {
+    background-color: #edf2f7;
+  }
+  
+  .renote-security-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #c6f6d5;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #38a169;
+    transition: all 0.3s ease;
+  }
+  
+  .renote-security-wrapper:hover .renote-security-icon {
+    background-color: #9ae6b4;
+    transform: scale(1.05);
+  }
+  
+  @keyframes featureCardFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Animation delays for feature cards */
+  .renote-feature-card:nth-child(1) { animation-delay: 0.1s; }
+  .renote-feature-card:nth-child(2) { animation-delay: 0.2s; }
+  .renote-feature-card:nth-child(3) { animation-delay: 0.3s; }
+  .renote-feature-card:nth-child(4) { animation-delay: 0.4s; }
+  .renote-feature-card:nth-child(5) { animation-delay: 0.5s; }
+  .renote-feature-card:nth-child(6) { animation-delay: 0.6s; }
+  
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .renote-app-layout {
+      padding: 4rem 2rem;
+    }
+  
+    .renote-main-wrapper {
+      flex-direction: row;
+    }
+  
+    .renote-preview-section {
+      width: 40%;
+      height: 600px;
+      position: sticky;
+      top: 2rem;
+    }
+  
+    .renote-content-section {
+      width: 60%;
+      padding: 3rem;
+    }
+  
+    .renote-features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .renote-app-title {
+      font-size: 2.5rem;
+    }
+  
+    .renote-section-title {
+      font-size: 1.75rem;
+    }
+  }
+  
+  /* For larger screens */
+  @media (min-width: 1024px) {
+    .renote-app-layout {
+      padding: 5rem 2rem;
+    }
+  
+    .renote-preview-section {
+      width: 45%;
+    }
+  
+    .renote-content-section {
+      width: 65%;
+      margin-left: -10%;
+    }
+  }

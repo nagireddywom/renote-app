@@ -1,0 +1,115 @@
+.auth-form-container {
+    max-width: 28rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-8);
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .auth-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-6);
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+  
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+  }
+  
+  .input-label {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+  
+  .input-control {
+    width: 100%;
+    padding: var(--spacing-2) var(--spacing-3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .input-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+  }
+  
+  .input-error {
+    border-color: var(--error-color);
+  }
+  
+  .error-text {
+    color: var(--error-color);
+    font-size: var(--font-size-sm);
+  }
+  
+  .error-message {
+    background-color: #FEE2E2;
+    color: var(--error-color);
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-4);
+    text-align: center;
+  }
+  
+  .success-message {
+    background-color: #ECFDF5;
+    color: var(--success-color);
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-4);
+    text-align: center;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: var(--spacing-2) var(--spacing-4);
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.4);
+  }
+  
+  .auth-links {
+    margin-top: var(--spacing-4);
+    text-align: center;
+  }
+  
+  .forgot-password-link {
+    color: var(--primary-color);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .forgot-password-link:hover {
+    color: var(--primary-hover);
+  }

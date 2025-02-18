@@ -1,0 +1,98 @@
+.book-recycling-container {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color */
+    min-height: 100vh; /* Ensure container takes up full viewport height */
+  }
+  
+  .input-section {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .input-section input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    flex-grow: 1; /* Input takes up available space */
+  }
+  
+  .add-button, .recycle-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  .add-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .add-button:hover {
+    background-color: #45a049;
+  }
+  
+  .recycle-button {
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-left: 10px; /* Space between buttons */
+  }
+  
+  .recycle-button:hover {
+    background-color: #da190b;
+  }
+  
+  
+  .lists-container {
+    display: flex;
+    width: 80%; /* Occupy most of the container width */
+    justify-content: space-around; /* Distribute lists evenly */
+  }
+  
+  .book-list {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    width: 45%; /* Each list takes roughly half the lists-container width */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Add a subtle shadow */
+  }
+  
+  .book-list h2 {
+    margin-top: 0; /* Remove default margin for h2 */
+  }
+  
+  .book-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .book-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex; /* Use flexbox for aligning list items */
+    align-items: center;
+  }
+  
+  .book-list li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Responsive adjustments (example) */
+  @media (max-width: 768px) {
+    .lists-container {
+      flex-direction: column; /* Stack lists vertically on smaller screens */
+      width: 90%;
+    }
+  
+    .book-list {
+      width: 100%;
+      margin-bottom: 20px; /* Add margin between stacked lists */
+    }
+  }
