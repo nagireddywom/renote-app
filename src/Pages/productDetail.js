@@ -667,15 +667,41 @@ const ProductDetail = () => {
     setTimeout(() => setPriceState(''), 500);
   };
 
+  // const handleBuyNow = () => {
+  //   const orderDetails = {
+  //     product: currentProduct.name,
+  //     quantity,
+  //     totalCost: calculatePrice().totalPrice,
+  //     isCustomized: false
+  //   };
+    
+  //   navigate('/checkout/shipping', { state: orderDetails });
+  // };
+  
   const handleBuyNow = () => {
     const orderDetails = {
       product: currentProduct.name,
       quantity,
+      pages,
+      paperType,
+      bindingType,
+      pageLayout,
       totalCost: calculatePrice().totalPrice,
       isCustomized: false
     };
     
-    navigate('/checkout/shipping', { state: orderDetails });
+    // Store in local storage
+    localStorage.setItem('currentOrder', JSON.stringify(orderDetails));
+    
+    navigate('/checkout/shipping', { 
+      state: {
+        product: currentProduct.name,
+        quantity,
+        pages,
+        totalCost: calculatePrice().totalPrice,
+        isCustomized: false
+      }
+    });
   };
 
 

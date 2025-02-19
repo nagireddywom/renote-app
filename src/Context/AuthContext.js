@@ -164,25 +164,54 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
+  // const [loading, setLoading] = useState(true);
+
+  const [user, setUser] = useState(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      try {
+        const userData = JSON.parse(storedUser);
+        // Ensure both id formats are present
+        return {
+          ...userData,
+          _id: userData._id || userData.id,
+          id: userData._id || userData.id
+        };
+      } catch {
+        return null;
+      }
+    }
+    return null;
+  });
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is logged in
-    const storedUser = localStorage.getItem('user');
-    console.log('AuthContext - Stored user data:', storedUser);
-    
-    if (storedUser) {
+    const initAuth = async () => {
       try {
-        const parsedUser = JSON.parse(storedUser);
-        console.log('AuthContext - Parsed user:', parsedUser);
-        setUser(parsedUser);
+        const token = localStorage.getItem('token');
+        const storedUser = localStorage.getItem('user');
+        
+        if (token && storedUser) {
+          const userData = JSON.parse(storedUser);
+          setUser({
+            ...userData,
+            _id: userData._id || userData.id,
+            id: userData._id || userData.id
+          });
+        }
       } catch (error) {
-        console.error('Error parsing stored user:', error);
+        console.error('Auth initialization error:', error);
+        localStorage.removeItem('token');
         localStorage.removeItem('user');
+        setUser(null);
+      } finally {
+        setLoading(false);
       }
-    }
-    setLoading(false);
+    };
+
+    initAuth();
   }, []);
 
   const updateUser = (userData) => {

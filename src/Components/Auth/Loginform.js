@@ -160,59 +160,118 @@ const LoginForm = () => {
   const location = useLocation(); // Add this to handle redirects
   const { setUser } = useAuth();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setError('');
+  //   setLoading(true);
 
-    try {
-      const data = await login(identifier, password);
+  //   try {
+  //     const data = await login(identifier, password);
       
-      // Store token first
-      if (data.token) {
-        localStorage.setItem('token', data.token);
-      }
+  //     // Store token first
+  //     if (data.token) {
+  //       localStorage.setItem('token', data.token);
+  //     }
 
-      // Store user data with proper structure
-      const userData = {
-        _id: data.user._id || data.user.id,
-        name: data.user.name,
-        email: data.user.email,
-        phoneNumber: data.user.phoneNumber,
-        isEmailVerified: data.user.isEmailVerified
-      };
+  //     // Store user data with proper structure
+  //     const userData = {
+  //       _id: data.user._id || data.user.id,
+  //       name: data.user.name,
+  //       email: data.user.email,
+  //       phoneNumber: data.user.phoneNumber,
+  //       isEmailVerified: data.user.isEmailVerified
+  //     };
 
-      // Update context and localStorage
-      setUser(userData);
-      localStorage.setItem('user', JSON.stringify(userData));
+  //     // Update context and localStorage
+  //     setUser(userData);
+  //     localStorage.setItem('user', JSON.stringify(userData));
 
-      console.log('Login successful:', {
-        userData,
-        token: data.token ? 'Token present' : 'No token'
-      });
+  //     console.log('Login successful:', {
+  //       userData,
+  //       token: data.token ? 'Token present' : 'No token'
+  //     });
       
-      if (!data.user.name || !data.user.isEmailVerified) {
-        navigate('/complete-profile');
-      } else {
-        // Check for returnTo path from shipping page
-        const returnTo = location.state?.returnTo;
-        if (returnTo) {
-          navigate(returnTo, { state: location.state?.orderData });
-        } else {
-          navigate('/checkout/shipping');
-        }
-      }
-    } catch (error) {
-      console.error('Login error:', error);
-      setError(error.response?.data?.message || 'Invalid credentials');
-      // Clear any partial data on error
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      setUser(null);
-    } finally {
-      setLoading(false);
+  //     if (!data.user.name || !data.user.isEmailVerified) {
+  //       navigate('/complete-profile');
+  //     } else {
+  //       // Check for returnTo path from shipping page
+  //       const returnTo = location.state?.returnTo;
+  //       if (returnTo) {
+  //         navigate(returnTo, { state: location.state?.orderData });
+  //       } else {
+  //         navigate('/checkout/shipping');
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.error('Login error:', error);
+  //     setError(error.response?.data?.message || 'Invalid credentials');
+  //     // Clear any partial data on error
+  //     localStorage.removeItem('token');
+  //     localStorage.removeItem('user');
+  //     setUser(null);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setError('');
+  setLoading(true);
+
+  try {
+    const loginResponse = await login(identifier, password);
+    
+    // Extract user ID from the token
+    const token = loginResponse.token;
+    const tokenParts = token.split('.');
+    const payloadBase64 = tokenParts[1];
+    const payload = JSON.parse(atob(payloadBase64));
+    const userId = payload.id;
+    
+    const userData = {
+      _id: userId,
+      name: loginResponse.user.name,
+      email: loginResponse.user.email,
+      phoneNumber: loginResponse.user.phoneNumber,
+      isEmailVerified: loginResponse.user.isEmailVerified,
+      address: loginResponse.user.address || {}
+    };
+
+    // Store token
+    if (loginResponse.token) {
+      localStorage.setItem('token', loginResponse.token);
     }
-  };
+
+    // Update context and localStorage
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
+
+    // Determine navigation based on user profile completeness
+    if (!userData.name || !userData.isEmailVerified) {
+      navigate('/complete-profile', {
+        state: { from: location }
+      });
+    } else {
+      // Navigate to shipping page
+      navigate('/checkout/shipping', {
+        state: {
+          fromLogin: true,
+          userData: userData
+        }
+      });
+    }
+  } catch (error) {
+    console.error('Detailed Login Error:', error);
+    setError(error.response?.data?.message || 'Invalid credentials');
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setUser(null);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="auth-form-container">
