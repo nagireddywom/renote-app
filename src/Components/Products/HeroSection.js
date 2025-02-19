@@ -43,7 +43,7 @@ const HeroSection = ({ image }) => {
               />
             ) : (
               <div className="image-placeholder">
-                <span>Image placeholder</span>
+                <span></span>
               </div>
             )}
           </div>

@@ -634,7 +634,7 @@ const ShippingPage = () => {
                       id="isGift"
                     />
                     <label htmlFor="isGift">
-                      Add Gift Wrapping (+${formatPrice(GIFT_WRAPPING_PRICE)})
+                      Add Gift Wrapping (+{formatPrice(GIFT_WRAPPING_PRICE)})
                     </label>
                   </div>
 
