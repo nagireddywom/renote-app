@@ -2,31 +2,28 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "18.x"
-  },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.12",
-    "@mui/icons-material": "^5.15.12",
+    "@mui/material": "^6.4.2",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
-    "framer-motion": "^11.0.8",
+    "framer-motion": "^12.4.1",
     "html2canvas": "^1.4.1",
-    "jspdf": "^2.5.1",
-    "lucide-react": "^0.344.0",
+    "jspdf": "^2.5.2",
+    "lucide-react": "^0.474.0",
     "qrcode": "^1.5.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.5",
     "react-scripts": "5.0.1"
   },
+   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
   "scripts": {
-    "start": "npx react-scripts start",
-    "build": "npx react-scripts build",
-    "test": "npx react-scripts test",
-    "eject": "npx react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -46,4 +43,5 @@
       "last 1 safari version"
     ]
   }
+ 
 }
