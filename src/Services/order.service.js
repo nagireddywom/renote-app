@@ -96,7 +96,7 @@
 // Services/order.service.js// services/order.service.js
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'https://backend-wzk0.onrender.com/api';
 
 export const createOrder = async (orderData) => {
   try {

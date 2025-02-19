@@ -54,7 +54,7 @@ import axios from 'axios';
 // src/services/auth.service.js
 import apiClient from './api.config';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'https://backend-wzk0.onrender.com/api';
 
 export const login = async (identifier, password) => {
     try {

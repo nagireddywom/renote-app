@@ -12,7 +12,7 @@ const TrackingPage = () => {
   useEffect(() => {
     const fetchTrackingDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/shiprocket/track/${awbNumber}`);
+        const response = await fetch(`https://backend-wzk0.onrender.com/api/shiprocket/track/${awbNumber}`);
         const data = await response.json();
         
         if (response.ok) {
