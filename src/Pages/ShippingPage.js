@@ -235,43 +235,43 @@ const ShippingPage = () => {
   }, [user, loading]);
 
   const handleProceedToPayment = () => {
-    // Validate all required shipping fields
-    const requiredFields = [
-      'firstName', 
-      'lastName', 
-      'email', 
-      'phone', 
-      'address1', 
-      'city', 
-      'state', 
-      'zipCode'
-    ];
+    // // Validate all required shipping fields
+    // const requiredFields = [
+    //   'firstName', 
+    //   'lastName', 
+    //   'email', 
+    //   'phone', 
+    //   'address1', 
+    //   'city', 
+    //   'state', 
+    //   'zipCode'
+    // ];
   
-    // Check for empty or whitespace-only fields
-    const missingFields = requiredFields.filter(field => 
-      !shippingInfo[field] || 
-      (typeof shippingInfo[field] === 'string' && shippingInfo[field].trim() === '')
-    );
+    // // Check for empty or whitespace-only fields
+    // const missingFields = requiredFields.filter(field => 
+    //   !shippingInfo[field] || 
+    //   (typeof shippingInfo[field] === 'string' && shippingInfo[field].trim() === '')
+    // );
   
-    // Email and phone validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{10}$/; // Assumes 10-digit phone number
+    // // Email and phone validation
+    // const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // const phoneRegex = /^[0-9]{10}$/; // Assumes 10-digit phone number
   
-    let validationError = '';
+    // let validationError = '';
   
-    if (missingFields.length > 0) {
-      validationError = `Please fill in all required fields: ${missingFields.join(', ')}`;
-    } else if (!emailRegex.test(shippingInfo.email)) {
-      validationError = 'Please enter a valid email address';
-    } else if (!phoneRegex.test(shippingInfo.phone)) {
-      validationError = 'Please enter a valid 10-digit phone number';
-    }
+    // if (missingFields.length > 0) {
+    //   validationError = `Please fill in all required fields: ${missingFields.join(', ')}`;
+    // } else if (!emailRegex.test(shippingInfo.email)) {
+    //   validationError = 'Please enter a valid email address';
+    // } else if (!phoneRegex.test(shippingInfo.phone)) {
+    //   validationError = 'Please enter a valid 10-digit phone number';
+    // }
   
-    if (validationError) {
-      // Show error message
-      setError(validationError);
-      return;
-    }
+    // if (validationError) {
+    //   // Show error message
+    //   setError(validationError);
+    //   return;
+    // }
   
     // All validations passed, proceed to payment popup
     setShowPaymentPopup(true);
@@ -778,7 +778,7 @@ isDisabled={isSubmitting}
     {isSubmitting ? 'Processing...' : `Proceed to Payment (RS ${formatPrice(totalPrice)})`}
   </button>
 )} */}
-  {error && (
+  {/* {error && (
         <div className="validation-error-banner">
           <p>{error}</p>
           <button 
@@ -789,10 +789,10 @@ isDisabled={isSubmitting}
             &times;
           </button>
         </div>
-      )}
+      )} */}
 
 <button 
-        type="button" 
+        type="submit" 
         className={`submit-button ${isSubmitting ? 'loading' : ''} ${isSuccess ? 'success' : ''}`}
         disabled={isSubmitting}
         onClick={handleProceedToPayment}
