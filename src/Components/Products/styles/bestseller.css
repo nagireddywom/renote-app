@@ -261,3 +261,55 @@
       font-size: 1.3rem;
     }
   }
+  
+  .buy-now-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    margin-top: 16px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-weight: 500;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
+    z-index: 2;
+  }
+  
+  .buy-now-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  }
+  
+  .buy-now-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .buy-now-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+    
+    .buy-now-icon {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .buy-now-button {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+    
+    .buy-now-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }

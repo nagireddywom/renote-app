@@ -159,9 +159,9 @@ const videoRef = useRef(null);
 
       <div>
       <BestSellers />
-      </div>
+      {/* </div>
       <CollectionHeader />
-      <div>
+      <div> */}
             <Products/>
            </div>
     
@@ -318,7 +318,8 @@ const videoRef = useRef(null);
           </div>
         </section>
         <div>
-        <h2 className="features-title">Our Achievements speak for itself</h2>
+        {/* <h2 className="features-title">Our Achievements speak for itself</h2> */}
+        <h2 className="features-title-bottom-scroll">Our Achievements speak for itself</h2>
           <ScrollingContainers/>
         </div>
         {/* Footer */}

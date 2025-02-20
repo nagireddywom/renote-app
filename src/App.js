@@ -237,6 +237,7 @@ import OrderConfirmation from './Pages/OrderConformation';
 import TrackingPage from './Pages/orderTrankingPage';
 import PrivacyPage from './Pages/Privacy page';
 import TermsPage from './Pages/TermsPage';
+import GuestRoute from './Components/Auth/GuestRoute';
 // Import CSS
 import './Styles/variables.css';
 import './Styles/auth.css';
@@ -271,9 +272,9 @@ function App() {
           <Route
             path="/checkout/shipping"
             element={
-              <ProtectedRoute>
+              <GuestRoute>
                 <ShippingPage />
-              </ProtectedRoute>
+              </GuestRoute>
             }
           />
           <Route

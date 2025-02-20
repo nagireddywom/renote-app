@@ -215,6 +215,63 @@ const LoginForm = () => {
   // };
 
   
+// const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   setError('');
+//   setLoading(true);
+
+//   try {
+//     const loginResponse = await login(identifier, password);
+    
+//     // Extract user ID from the token
+//     const token = loginResponse.token;
+//     const tokenParts = token.split('.');
+//     const payloadBase64 = tokenParts[1];
+//     const payload = JSON.parse(atob(payloadBase64));
+//     const userId = payload.id;
+    
+//     const userData = {
+//       _id: userId,
+//       name: loginResponse.user.name,
+//       email: loginResponse.user.email,
+//       phoneNumber: loginResponse.user.phoneNumber,
+//       isEmailVerified: loginResponse.user.isEmailVerified,
+//       address: loginResponse.user.address || {}
+//     };
+
+//     // Store token
+//     if (loginResponse.token) {
+//       localStorage.setItem('token', loginResponse.token);
+//     }
+
+//     // Update context and localStorage
+//     setUser(userData);
+//     localStorage.setItem('user', JSON.stringify(userData));
+
+//     // Determine navigation based on user profile completeness
+//     if (!userData.name || !userData.isEmailVerified) {
+//       navigate('/complete-profile', {
+//         state: { from: location }
+//       });
+//     } else {
+//       // Navigate to shipping page
+//       navigate('/checkout/shipping', {
+//         state: {
+//           fromLogin: true,
+//           userData: userData
+//         }
+//       });
+//     }
+//   } catch (error) {
+//     console.error('Detailed Login Error:', error);
+//     setError(error.response?.data?.message || 'Invalid credentials');
+//     localStorage.removeItem('token');
+//     localStorage.removeItem('user');
+//     setUser(null);
+//   } finally {
+//     setLoading(false);
+//   }
+// };
 const handleSubmit = async (e) => {
   e.preventDefault();
   setError('');

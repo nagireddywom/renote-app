@@ -25,10 +25,16 @@ const ProtectedRoute = ({ children }) => {
     );
   }
 
-  if (!user) {
+  // if (!user) {
+  //   console.log('No user, redirecting to login');
+  //   return <Navigate to="/login" state={{ from: location }} replace />;
+  // }
+  if (!user && location.pathname !== '/checkout/shipping') {
     console.log('No user, redirecting to login');
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
+
+  
 
   // If user exists but hasn't completed profile, redirect to profile completion
   if (!user.name || !user.isEmailVerified) {

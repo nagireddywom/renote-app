@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Star, Award, Users } from 'lucide-react';
+// import { ChevronLeft, ChevronRight, Star, Award, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './styles/bestseller.css';
 import Air from '../../assets/Air.png';
@@ -9,6 +9,8 @@ import Classic from '../../assets/Classic.png';
 // import nature from '../../assets//nature.jpeg';
 import Eco from   '../../assets/Eco.png';
 import Lite from   '../../assets/Lite.png';
+
+import { ChevronLeft, ChevronRight, Star, Award, Users, ShoppingBag } from 'lucide-react';
 
 const BestSellers = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,19 +36,18 @@ const BestSellers = () => {
       tag: 'Best Value',
       path: '/product/classic'
     },
-    {
-      id: 3,
-      name: 'ReNote LITE',
-      image: Lite,
-      rating: 4.6,
-      reviews: 750,
-      price: '₹499',
-      tag: 'Budget Pick',
-      path: '/product/lite'
-    }
+    // {
+    //   id: 3,
+    //   name: 'ReNote LITE',
+    //   image: Lite,
+    //   rating: 4.6,
+    //   reviews: 750,
+    //   price: '₹499',
+    //   tag: 'Budget Pick',
+    //   path: '/product/lite'
+    // }
   ];
 
-  // Auto slide every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bestSellers.length);
@@ -60,6 +61,11 @@ const BestSellers = () => {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + bestSellers.length) % bestSellers.length);
+  };
+
+  const handleBuyClick = (e, path) => {
+    e.preventDefault(); // Prevent the default Link navigation
+    window.location.href = path; // Navigate to product page
   };
 
   return (
@@ -104,6 +110,13 @@ const BestSellers = () => {
                   </div>
                 </div>
                 {/* <div className="price">{product.price}</div> */}
+                <button 
+                  onClick={(e) => handleBuyClick(e, product.path)}
+                  className="buy-now-button"
+                >
+                  <ShoppingBag className="buy-now-icon" />
+                  Buy Now
+                </button>
               </div>
             </Link>
           ))}

@@ -98,21 +98,23 @@ import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL || 'https://backend-wzk0.onrender.com/api';
 
+
+// Create order for both authenticated and guest users
 export const createOrder = async (orderData) => {
   try {
     const token = localStorage.getItem('token');
-    if (!token) {
-      throw new Error('Authentication required');
+    const headers = {
+      'Content-Type': 'application/json'
+    };
+
+    // Add authorization header if token exists
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
     }
 
     console.log('Sending order data:', orderData);
 
-    const response = await axios.post(`${API_URL}/orders`, orderData, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    const response = await axios.post(`${API_URL}/orders`, orderData, { headers });
 
     console.log('Order creation response:', response.data);
 
@@ -127,30 +129,41 @@ export const createOrder = async (orderData) => {
   }
 };
 
-export const getOrder = async (orderNumber) => {
+// Get order - works for both authenticated and guest orders
+export const getOrder = async (orderNumber, email = null) => {
   try {
     const token = localStorage.getItem('token');
-    if (!token) {
-      throw new Error('Authentication required');
-    }
+    const headers = {
+      'Content-Type': 'application/json'
+    };
 
-    const response = await axios.get(`${API_URL}/orders/${orderNumber}`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+      const response = await axios.get(`${API_URL}/orders/${orderNumber}`, { headers });
+      if (!response.data.success) {
+        throw new Error(response.data.message || 'Failed to fetch order');
       }
-    });
-
-    if (!response.data.success) {
-      throw new Error(response.data.message || 'Failed to fetch order');
+      return response.data.order;
+    } else if (email) {
+      // Guest order lookup
+      const response = await axios.post(`${API_URL}/orders/guest/track`, {
+        orderNumber,
+        email
+      }, { headers });
+      if (!response.data.success) {
+        throw new Error(response.data.message || 'Failed to fetch order');
+      }
+      return response.data.order;
+    } else {
+      throw new Error('Either authentication or email is required to fetch order');
     }
-
-    return response.data.order;
   } catch (error) {
     console.error('Get order error:', error.response?.data || error.message);
     throw new Error(error.response?.data?.message || 'Failed to fetch order');
   }
 };
 
+// Get user orders (authenticated users only)
 export const getUserOrders = async () => {
   try {
     const token = localStorage.getItem('token');
@@ -172,5 +185,28 @@ export const getUserOrders = async () => {
   } catch (error) {
     console.error('Get user orders error:', error.response?.data || error.message);
     throw new Error(error.response?.data?.message || 'Failed to fetch orders');
+  }
+};
+
+// New function to track guest orders
+export const trackGuestOrder = async (orderNumber, email) => {
+  try {
+    const response = await axios.post(`${API_URL}/orders/guest/track`, {
+      orderNumber,
+      email
+    }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.data.success) {
+      throw new Error(response.data.message || 'Failed to track order');
+    }
+
+    return response.data.order;
+  } catch (error) {
+    console.error('Track guest order error:', error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || 'Failed to track order');
   }
 };
